@@ -21,3 +21,4 @@ mkdir -p {Documents,Downloads,Media/Music,Media/Pictures,Share,Code,Media/Videos
 sleep 1
 sudo systemctl enable --now bluetooth
 sudo systemctl enable --now v2raya
+mkdir ~/Media/Pictures/screenshots
