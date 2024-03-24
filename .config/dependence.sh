@@ -1,8 +1,8 @@
 #!/bin/bash
 #
 paru -Sy \
-hyprland-git kitty rofi dunst waybar \
-grimblast-git hypridle hyprlock hyprpaper \
+hyprland-git kitty rofi dunst waybar cliphist \
+grimblast-git hypridle hyprlock hyprpaper hyprpicker \
 yazi jq unarchiver ffmpegthumbnailer \
 ripgrep fzf poppler libnotify fastfetch \
 pavucontrol xdg-desktop-portal xdg-desktop-portal-gtk \

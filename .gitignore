@@ -20,9 +20,9 @@
 !.config/electron-flags.conf
 !.config/locale.conf
 !.config/user-dirs.dirs
+!.config/dependence.sh
 
 !.bashrc
 !.inputrc
-!dependence.sh
 
 !README.md
