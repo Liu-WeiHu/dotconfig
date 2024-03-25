@@ -2,7 +2,7 @@
     "layer": "top",
     "position": "top",
     "spacing": 0,
-    "height": 38,
+    "height": 40,
     "modules-left": [
         "custom/logo",
         "hyprland/workspaces",
@@ -154,8 +154,8 @@
         "on-scroll-up": "playerctl previous",
         "on-scroll-down": "playerctl next",
         "format-icons": {
-            "Playing": "<span foreground='#025a0b'></span>",
-            "Paused": "<span foreground='#7e1300'></span>"
+            "Playing": "<span foreground='#025a0b'> </span>",
+            "Paused": "<span foreground='#7e1300'> </span>"
         }
     },
     "custom/logo": {

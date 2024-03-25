@@ -3,15 +3,14 @@
   border-radius: 0;
   min-height: 0;
   font-weight: bold;
-  font-family: "JetBrains Mono, HarmonyOS Sans SC";
-  font-size: 16px;
+  font-family: JetBrains Mono, HarmonyOS Sans SC;
+  font-size: 14px;
 
 }
 
 window#waybar {
   background: rgba(92, 83, 109, 0);
 }
-
 
 tooltip {
   background: #1e1e2e;
@@ -26,117 +25,77 @@ tooltip label {
   color: #cdd6f4;
 }
 
-#workspaces {
-  background: #366068;
-  margin: 5px 10px 0px 10px;
-  padding: 0px 5px 0px 0px;
+#workspaces button {
+  /* background-color: #cdd6f4; */
+  color: #11111b;
   border-radius: 8px;
-  border: solid 0px #f4d9e1;
-  font-weight: normal;
-  font-style: normal;
 }
 
-#workspaces button {
-  padding: 3px 5px;
-  color: #cacacc;
-  margin-right: 5px;
+#workspaces button.empty {
+  color: #11111b;
+  border-radius: 8px;
+}
+
+#workspaces button.visible {
+  color: blue;
+  border-radius: 8px;
 }
 
 #workspaces button.active {
-  color: #a6adc8;
+  color: green;
+  border-radius: 8px;
 }
 
 #workspaces button.urgent {
-  color: #11111b;
-  background: #1889f2;
-  border-radius: 14px;
+  background-color: red;
+  border-radius: 1em;
+  color: #cacacc;
+  border-radius: 8px;
 }
 
-#workspaces button:hover {
-  background: #11111b;
-  color: #282842;
-  border-radius: 14px;
+#workspaces,
+#custom-logo,
+#taskbar,
+.modules-center,
+.modules-right {
+  background-color: #8EC5FC;
+  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+  color: rgb(187, 0, 255);
+  border-radius: 8px;
+  font-weight: bold;
+  margin: 10px 10px 0px 10px;
+}
+
+#custom-media {
+  color: blue;
 }
 
 #custom-logo {
-  background: #366068;
-  margin: 5px 10px 0px 10px;
-  border-radius: 13px;
-  color: #2718f8;
+  color: blue;
 }
 
-
-#taskbar {
-  background: #366068;
-  border-radius: 8px;
-  margin: 5px 10px 0px 10px;
-  padding: 0px 10px 0px 10px;
-  font-weight: bold;
-}
-
-.modules-center {
-  background-color: #8EC5FC;
-  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
-  color: black;
-  border-radius: 20px;
-}
-
-#clock,
 #custom-media,
-#tray {
-  /* margin: 5px; */
-  margin-left: 5px;
-  margin-right: 5px;
-  padding: 0px 10px;
-  font-weight: bold;
-}
-
-.modules-right {
-  background: #366068;
-  margin: 5px 10px 0px 10px;
-  /* color: #89b4fa; */
-  font-weight: bold;
-  border-radius: 8px;
-}
-
-
+#clock,
+#tray,
 #cpu,
 #memory,
-#network {
-  margin-left: 5px;
-  margin-right: 5px;
-  color: rgb(90, 206, 61);
-}
-
-#network {
-  min-width: 200px;
-  padding-left: 0px;
-}
-
+#network,
 #bluetooth,
 #pulseaudio,
 #backlight,
 #upower,
 #custom-dunst,
 #custom-power {
-  margin-left: 5px;
-  margin-right: 5px;
-  color: #cacacc;
+  margin: 0px 5px;
 }
 
-
-
-/* #pulseaudio {
-  background: #1e1e2e;
-  border-radius: 8px;
-  margin: 5px;
-  margin-left: 5px;
-  margin-right: 5px;
-  padding: 0px 10px 0px 10px;
-  font-weight: bold;
+#clock {
+  color: white;
 }
 
-*/
+#network {
+  min-width: 200px;
+}
 
 @keyframes blink {
   to {
