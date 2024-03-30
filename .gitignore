@@ -12,11 +12,9 @@
 !.config/fastfetch/
 !.config/hypr/
 !.config/kitty/
-!.config/mpv/
 !.config/rofi/
 !.config/waybar/
 !.config/tealdeer/
-!.config/yazi/
 !.config/chrome-flags.conf
 !.config/electron-flags.conf
 !.config/locale.conf
