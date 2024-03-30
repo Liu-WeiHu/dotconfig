@@ -11,11 +11,14 @@
 !.config/dunst/
 !.config/fastfetch/
 !.config/hypr/
+!.config/mpv/
 !.config/kitty/
 !.config/rofi/
 !.config/waybar/
 !.config/tealdeer/
 !.config/chrome-flags.conf
+!.config/code-flags.conf
+!.config/qq-flags.conf
 !.config/electron-flags.conf
 !.config/locale.conf
 !.config/user-dirs.dirs

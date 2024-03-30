@@ -4,4 +4,4 @@
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-Hyprland
+[ "$(tty)" = "/dev/tty1" ] && Hyprland

@@ -1,15 +1,15 @@
 #!/bin/bash
 #
 paru -Sy \
-hyprland-git kitty rofi dunst waybar \
+hyprland-git kitty rofi dunst waybar wl-clipboard \
 grimblast-git hypridle hyprlock hyprpaper hyprpicker \
 gwenview dolphin ffmpegthumbs libnotify fastfetch \
 ark 7-zip-full unrar unarchiver qt6ct \
 pavucontrol xdg-desktop-portal xdg-desktop-portal-gtk \
 xdg-desktop-portal-hyprland xdg-user-dirs \
-bluez bluez-utils inetutils polkit-kde-agent 
+bluez bluez-utils inetutils polkit-kde-agent google-chrome \
 # 以下是 自由安装软件
-v2ray v2raya obs-studio openssh go rustup \
+xray v2raya obs-studio openssh go rustup \
 visual-studio-code-bin linuxqq wechat-universal-bwrap 
 
 sleep 2
