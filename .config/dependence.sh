@@ -1,14 +1,13 @@
 #!/bin/bash
 #
 paru -Sy \
-hyprland-git kitty rofi dunst waybar cliphist \
+hyprland-git kitty rofi dunst waybar \
 grimblast-git hypridle hyprlock hyprpaper hyprpicker \
-yazi jq unarchiver ffmpegthumbnailer \
-ripgrep fzf poppler libnotify fastfetch \
+gwenview dolphin ffmpegthumbs libnotify fastfetch \
+ark 7-zip-full unrar unarchiver qt6ct \
 pavucontrol xdg-desktop-portal xdg-desktop-portal-gtk \
 xdg-desktop-portal-hyprland xdg-user-dirs \
-bluez bluez-utils inetutils polkit-kde-agent \
-wl-clipboard celluloid \   
+bluez bluez-utils inetutils polkit-kde-agent 
 # 以下是 自由安装软件
 v2ray v2raya obs-studio openssh go rustup \
 visual-studio-code-bin linuxqq wechat-universal-bwrap 
