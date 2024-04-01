@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 paru -Sy \
-hyprland-git kitty rofi dunst waybar wl-clipboard \
+hyprland kitty rofi dunst waybar wl-clipboard \
 grimblast-git hypridle hyprlock hyprpaper hyprpicker \
 gwenview dolphin ffmpegthumbs libnotify fastfetch \
 ark 7-zip-full unrar unarchiver qt6ct \
