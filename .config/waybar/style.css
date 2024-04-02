@@ -25,37 +25,43 @@ tooltip label {
   color: #cdd6f4;
 }
 
+#workspaces {
+padding: 4px 5px;
+  border-radius: 16px;
+border: solid 0px #adfd85;
+font-weight: normal;
+font-style: normal;
+}
 #workspaces button {
-  /* background-color: #cdd6f4; */
-  color: #11111b;
-  border-radius: 8px;
-}
-
-#workspaces button.empty {
-  color: #11111b;
-  border-radius: 8px;
-}
-
-#workspaces button.visible {
-  color: blue;
-  border-radius: 8px;
+  padding: 0px 5px;
+  margin: 0px 3px;
+  border-radius: 16px;
+  color: #2f354a;
+  background-color: #2f354a;
+  transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-  color: green;
-  border-radius: 8px;
+  color: #cdd6f4;
+  background-color: #cdd6f4;
+  border-radius: 16px;
+  min-width: 50px;
+  background-size: 400% 400%;
+  transition: all 0.3s ease-in-out;
 }
 
-#workspaces button.urgent {
-  background-color: red;
-  border-radius: 1em;
-  color: #cacacc;
-  border-radius: 8px;
+#workspaces button:hover {
+  background-color: #cdd6f4;
+  color: #cdd6f4;
+  border-radius: 16px;
+min-width: 50px;
+background-size: 400% 400%;
 }
 
-#workspaces,
 #custom-logo,
 #taskbar,
+#tray,
+#custom-media,
 .modules-center,
 .modules-right {
   background-color: #8EC5FC;
@@ -74,9 +80,7 @@ tooltip label {
   color: blue;
 }
 
-#custom-media,
 #clock,
-#tray,
 #cpu,
 #memory,
 #network,
@@ -87,10 +91,6 @@ tooltip label {
 #custom-dunst,
 #custom-power {
   margin: 0px 5px;
-}
-
-#clock {
-  color: white;
 }
 
 #network {

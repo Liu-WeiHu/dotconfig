@@ -5,13 +5,12 @@
     "height": 40,
     "modules-left": [
         "custom/logo",
-        "hyprland/workspaces",
-        "wlr/taskbar"
+        "wlr/taskbar",
+        "tray",
+        "custom/media"
     ],
     "modules-center": [
-        "custom/media",
-        "clock",
-        "tray"
+        "hyprland/workspaces"
     ],
     "modules-right": [
         "cpu",
@@ -22,6 +21,7 @@
         "backlight",
         "upower",
         "custom/dunst",
+        "clock",
         "custom/power"
     ],
     "wlr/taskbar": {
@@ -44,7 +44,6 @@
         "format": " {status}",
         "format-connected": " {device_alias}",
         "format-connected-battery": " {device_alias} {device_battery_percentage}%  ",
-        // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
         "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
@@ -52,22 +51,21 @@
         "on-click": "~/.config/rofi/bluetooth/blt-connect.sh"
     },
     "hyprland/workspaces": {
-        "on-click": "activate",
-        "on-scroll-up": "hyprctl dispatch workspace -1",
-        "on-scroll-down": "hyprctl dispatch workspace +1",
+        "active-only": false,
+        "all-outputs": true,
+        "disable-scroll": false,
+        "on-scroll-up": "hyprctl dispatch workspace e-1",
+        "on-scroll-down": "hyprctl dispatch workspace e+1",
         "format": "{icon}",
+        "on-click": "activate",
         "format-icons": {
-            "default": "",
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
-            "6": "6",
-            "7": "7",
-            "8": "8",
-            "9": "9",
-            "active": "󰇄"
+            "urgent": "",
+            "active": "",
+            "default": "",
+            "sort-by-number": true
+        },
+        "persistent-workspaces": {
+            "*": 5
         }
     },
     "cpu": {
@@ -154,8 +152,8 @@
         "on-scroll-up": "playerctl previous",
         "on-scroll-down": "playerctl next",
         "format-icons": {
-            "Playing": "<span foreground='#025a0b'> </span>",
-            "Paused": "<span foreground='#7e1300'> </span>"
+            "Playing": "<span foreground='#025a0b'> 󰐊󰐊󰐊  </span>",
+            "Paused": "<span foreground='#7e1300'>   </span>"
         }
     },
     "custom/logo": {
