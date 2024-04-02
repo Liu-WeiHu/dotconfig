@@ -28,7 +28,7 @@ tooltip label {
 #workspaces {
 padding: 4px 5px;
   border-radius: 16px;
-border: solid 0px #adfd85;
+border: solid 0px #51b236;
 font-weight: normal;
 font-style: normal;
 }
@@ -36,14 +36,14 @@ font-style: normal;
   padding: 0px 5px;
   margin: 0px 3px;
   border-radius: 16px;
-  color: #2f354a;
-  background-color: #2f354a;
+  color: #7b86ab;
+  background-color: #7b86ab;
   transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-  color: #cdd6f4;
-  background-color: #cdd6f4;
+  color: #51b236;
+  background-color: #51b236;
   border-radius: 16px;
   min-width: 50px;
   background-size: 400% 400%;
@@ -51,8 +51,8 @@ font-style: normal;
 }
 
 #workspaces button:hover {
-  background-color: #cdd6f4;
-  color: #cdd6f4;
+  background-color: #51b236;
+  color: #51b236;
   border-radius: 16px;
 min-width: 50px;
 background-size: 400% 400%;

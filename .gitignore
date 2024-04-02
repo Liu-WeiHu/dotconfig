@@ -16,6 +16,8 @@
 !.config/rofi/
 !.config/waybar/
 !.config/tealdeer/
+!.config/gtk-3.0/
+!.config/qt6ct/
 !.config/chrome-flags.conf
 !.config/code-flags.conf
 !.config/qq-flags.conf
@@ -27,6 +29,7 @@
 !.bashrc
 !.inputrc
 !.bash_profile
+!.gtkrc-2.0
 
 !applications.png
 !clipboard.png
