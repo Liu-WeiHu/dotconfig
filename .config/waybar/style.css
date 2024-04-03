@@ -26,12 +26,13 @@ tooltip label {
 }
 
 #workspaces {
-padding: 4px 5px;
+  padding: 4px 5px;
   border-radius: 16px;
-border: solid 0px #51b236;
-font-weight: normal;
-font-style: normal;
+  border: solid 0px #51b236;
+  font-weight: normal;
+  font-style: normal;
 }
+
 #workspaces button {
   padding: 0px 5px;
   margin: 0px 3px;
@@ -54,8 +55,8 @@ font-style: normal;
   background-color: #51b236;
   color: #51b236;
   border-radius: 16px;
-min-width: 50px;
-background-size: 400% 400%;
+  min-width: 50px;
+  background-size: 400% 400%;
 }
 
 #custom-logo,
@@ -91,6 +92,12 @@ background-size: 400% 400%;
 #custom-dunst,
 #custom-power {
   margin: 0px 5px;
+}
+
+#custom-logo,
+#tray,
+#custom-power {
+  min-width: 40px;
 }
 
 #network {
