@@ -94,14 +94,17 @@ tooltip label {
   margin: 0px 5px;
 }
 
-#custom-logo,
-#tray,
-#custom-power {
+#tray {
   min-width: 40px;
 }
 
+#custom-logo,
+#custom-power {
+  min-width: 25px;
+}
+
 #network {
-  min-width: 200px;
+  min-width: 160px;
 }
 
 @keyframes blink {

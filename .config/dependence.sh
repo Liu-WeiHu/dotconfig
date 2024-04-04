@@ -7,7 +7,7 @@ gwenview dolphin ffmpegthumbs libnotify fastfetch \
 ark 7-zip-full unrar unarchiver qt6ct \
 pavucontrol xdg-desktop-portal polkit-gnome \
 xdg-desktop-portal-hyprland xdg-user-dirs \
-bluez bluez-utils inetutils polkit-kde-agent google-chrome \
+bluez bluez-utils inetutils google-chrome \
 xray v2raya obs-studio openssh go rustup \
 visual-studio-code-bin linuxqq wechat-universal-bwrap 
 

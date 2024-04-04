@@ -22,7 +22,6 @@
 !.config/code-flags.conf
 !.config/qq-flags.conf
 !.config/electron-flags.conf
-!.config/locale.conf
 !.config/user-dirs.dirs
 !.config/dependence.sh
 
