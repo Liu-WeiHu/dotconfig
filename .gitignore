@@ -18,6 +18,7 @@
 !.config/tealdeer/
 !.config/gtk-3.0/
 !.config/qt6ct/
+!.config/ocr/
 !.config/chrome-flags.conf
 !.config/code-flags.conf
 !.config/qq-flags.conf
