@@ -5,7 +5,7 @@ hyprland-git kitty rofi dunst waybar wl-clipboard \
 grimblast-git hypridle hyprlock hyprpaper hyprpicker \
 gwenview dolphin ffmpegthumbs libnotify fastfetch \
 ark 7-zip-full unrar unarchiver qt6ct tealdeer \
-pavucontrol xdg-desktop-portal polkit-gnome \
+pavucontrol xdg-desktop-portal polkit-gnome xorg-xrdb \
 xdg-desktop-portal-hyprland xdg-user-dirs \
 bluez bluez-utils inetutils google-chrome \
 xray v2raya obs-studio openssh go rustup \
