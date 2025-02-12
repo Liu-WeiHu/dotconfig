@@ -1,0 +1,18 @@
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+alias svi='sudoedit' # gui code editor
+alias kdiff='kitten diff'
+alias kssh='kitten ssh'
+alias mkdir='mkdir -p'
+
+export PATH=$PATH:$HOME/Documents/go/bin:$HOME/.cargo/bin
+export GOPATH=~/Documents/go
+eval "$(atuin init zsh)"
+
