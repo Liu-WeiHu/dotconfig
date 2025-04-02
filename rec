@@ -15,13 +15,13 @@ output_file="${output_dir}/${recording_name}"
 case "$1" in
 q)
     echo "正在录制选定区域..."
-    # wl-screenrec -g "$(slurp)" --low-power off --codec av1 --audio --audio-codec flac --filename "$output_file" &
-    wl-screenrec -g "$(slurp)" --filename "$output_file" &
+    # wl-screenrec -g "$(slurp)" --low-power off --codec av1 --audio --audio-codec flac --filename "$output_file" >/dev/null &
+    wl-screenrec -g "$(slurp)" --filename "$output_file" >/dev/null &
     ;;
 e)
     echo "正在录制整个屏幕..."
-    # wl-screenrec --low-power off --codec av1 --audio --audio-codec flac --filename "$output_file" &
-    wl-screenrec --filename "$output_file" &
+    # wl-screenrec --low-power off --codec av1 --audio --audio-codec flac --filename "$output_file" >/dev/null &
+    wl-screenrec --filename "$output_file" >/dev/null &
     ;;
 w)
     echo "正在选择应用窗口..."
@@ -42,8 +42,8 @@ w)
     geometry="${x},${y} ${width}x${height}"
 
     echo "正在录制应用窗口：$geometry"
-    # wl-screenrec -g "$geometry" --low-power off --codec av1 --audio --audio-codec flac --filename "$output_file" &
-    wl-screenrec -g "$geometry" --filename "$output_file" &
+    # wl-screenrec -g "$geometry" --low-power off --codec av1 --audio --audio-codec flac --filename "$output_file" >/dev/null &
+    wl-screenrec -g "$geometry" --filename "$output_file" >/dev/null &
     ;;
 *)
     echo "无效参数：请传入 'q' 或 'w'"
