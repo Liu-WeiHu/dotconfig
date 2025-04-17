@@ -8,3 +8,6 @@ paru -S xdg-desktop-portal-gtk less btop fcitx5-breeze pot-translation yazi ffmp
 mkdir -p {~/.cache/com.pot-app.desktop,~/Code,~/Works,~/Shared,~/Media/Music,~/Media/Pictures/Screenshots,~/Media/Videos/recording}
 
 paru -Rsn pinta htop pacseek loupe imv
+
+paru -RSn nautilus-open-any-terminal nautilus-python nautilus libnautilus-extension
+paru -S poppler-glib
