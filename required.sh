@@ -9,5 +9,6 @@ mkdir -p {~/.cache/com.pot-app.desktop,~/Code,~/Works,~/Shared,~/Media/Music,~/M
 
 paru -Rsn pinta htop pacseek loupe imv
 
-paru -RSn nautilus-open-any-terminal nautilus-python nautilus libnautilus-extension
+# 卸载nautilus
+paru -Rsn nautilus-open-any-terminal nautilus-python nautilus libnautilus-extension
 paru -S poppler-glib
