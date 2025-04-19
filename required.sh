@@ -11,4 +11,4 @@ paru -Rsn pinta htop pacseek loupe imv
 
 # 卸载nautilus
 paru -Rsn nautilus-open-any-terminal nautilus-python nautilus libnautilus-extension
-paru -S poppler-glib
+paru -S poppler-glib libpanel
