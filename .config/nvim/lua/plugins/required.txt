@@ -1,0 +1,13 @@
+# mason 插件
+protobuf - buf
+rust - codelldb rust-analyzer
+js - json-lsp
+python - debugpy
+
+
+
+# lazyextra
+codeing.mini-surround
+dap.core 
+test.core
+
