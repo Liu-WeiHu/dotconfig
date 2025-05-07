@@ -28,7 +28,7 @@ save_dir="${2:-$XDG_PICTURES_DIR/Screenshots}"
 save_file=$(date +'%y%m%d_%Hh%Mm%Ss_screenshot.png')
 temp_screenshot="/tmp/screenshot.png"
 
-annotation_args=("-o" "${save_dir}/${save_file}" "-f" "${temp_screenshot}")
+annotation_args=("-o" "${save_dir}/${save_file}" "-df" "${temp_screenshot}")
 
 annotation_args+=("${SCREENSHOT_ANNOTATION_ARGS[@]}")
 evaluated_annotation_args=$(eval echo "${annotation_args[@]}")
