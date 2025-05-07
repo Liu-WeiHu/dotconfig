@@ -30,7 +30,7 @@ ueberzug_scale = 1
 ueberzug_offset = [0, 0, 0, 0]
 
 [opener]
-image = [{ run = 'satty -f "$1"', desc = "Image", for = "linux" }]
+image = [{ run = 'satty -df "$1"', desc = "Image", for = "linux" }]
 csv = [{ run = 'localc "$1"', desc = "csv", for = "linux" }]
 dir = [
     { run = 'cd "$@" && ${EDITOR:-vi} "$@"', desc = "$EDITOR", block = true, for = "unix" },
