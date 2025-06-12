@@ -6,3 +6,4 @@ vim.opt.tabstop = 4 -- 设置 Tab 键的宽度为 4
 vim.opt.softtabstop = 4 -- 设定插入模式下的 Tab 键宽度
 vim.opt.shiftwidth = 4 -- 设置自动缩进时的缩进宽度
 vim.opt.expandtab = true -- 使用空格代替 Tab 键
+vim.opt.diffopt:append("vertical") -- 使用:diffsplit 命令时垂直分割窗口 ]c [c 上/下一个差异 do dp 使用我/他的
