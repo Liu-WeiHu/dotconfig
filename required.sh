@@ -3,7 +3,7 @@
 paru -S go rustup
 rustup default stable
 
-paru -S xdg-desktop-portal-gtk less btop fcitx5-breeze pot-translation yazi 7zip ffmpegthumbnailer zoxide chafa \
+paru -S xdg-desktop-portal-gtk less btop fcitx5-breeze pot-translation yazi 7zip ffmpegthumbnailer zoxide chafa jq imagemagick \
     xdg-user-dirs xorg-xrdb atuin nvtop wl-screenrec-git mpv libreoffice-still libreoffice-still-zh-cn satty \
     npm lazygit fzf ripgrep fd hyprpolkitagent unzip podman podman-compose nwg-displays ark unarchiver
 
