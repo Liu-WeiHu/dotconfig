@@ -8,7 +8,6 @@ function y() {
 }
 
 alias svi='sudoedit' # gui code editor
-alias kdiff='kitten diff'
 alias kssh='kitten ssh'
 alias mkdir='mkdir -p'
 
