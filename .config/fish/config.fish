@@ -12,6 +12,8 @@ if status is-interactive
     alias ff='fastfetch'
     alias svi='sudoedit'
     alias pan='aliyunpan-go'
+    alias dust='dust -rb'
+    alias e='eza --icons'
 
     function y
         set tmp (mktemp -t "yazi-cwd.XXXXXX")
@@ -21,4 +23,6 @@ if status is-interactive
         end
         rm -f -- "$tmp"
     end
+
+    zoxide init fish | source
 end
