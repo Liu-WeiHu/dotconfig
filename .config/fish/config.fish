@@ -6,6 +6,7 @@ if status is-interactive
     set -gx GOPATH ~/Documents/go
     set -gx ALIYUNPAN_CONFIG_DIR ~/.config/aliyunpan/
     set -gx TERMINAL kitty
+    set -Ux SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/ssh-agent.socket"
 
     set -U fish_greeting
 
