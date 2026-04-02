@@ -1,0 +1,287 @@
+external-controller: 127.0.0.1:9090
+external-ui: ui
+secret: "hoyoverse"
+external-ui-url: "https://github.com/Zephyruso/zashboard/releases/latest/download/dist-sarasa-only.zip"
+
+external-controller-cors:
+  allow-origins:
+    - "https://board.zash.run.place"
+  allow-private-network: true
+
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: warning
+ipv6: true
+
+tcp-concurrent: true
+
+profile:
+  store-fake-ip: true
+
+hosts:
+  "services.googleapis.cn": "services.googleapis.com"
+
+dns:
+  enable: true
+  enhanced-mode: fake-ip
+  cache-algorithm: arc
+  ipv6: true
+  use-hosts: true
+  respect-rules: false
+  fake-ip-filter-mode: rule
+  fake-ip-filter:
+    - RULE-SET,exclude-fakeip-basic-domain,real-ip
+    - RULE-SET,exclude-fakeip-extra-domain,real-ip
+    - RULE-SET,ncsi-domain,real-ip
+    - RULE-SET,googlefcm-domain,real-ip
+    - RULE-SET,category-games@cn-domain,real-ip
+    - RULE-SET,cn-domain,real-ip
+    - RULE-SET,private-domain,real-ip
+    - MATCH,fake-ip
+  default-nameserver:
+    - tls://223.5.5.5
+    - tls://223.6.6.6
+  proxy-server-nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+  nameserver:
+    - "tcp://1.1.1.1#PROXY"
+    - "tcp://8.8.8.8#PROXY"
+  direct-nameserver:
+    - "223.5.5.5"
+    - "119.29.29.29"
+  direct-nameserver-follow-policy: false
+  nameserver-policy:
+    "rule-set:category-ads-all-domain": "rcode://success"
+    "rule-set:ncsi-domain":
+      - "223.5.5.5"
+      - "119.29.29.29"
+    "rule-set:cn-domain,private-domain":
+      - https://dns.alidns.com/dns-query
+      - https://doh.pub/dns-query
+
+sniffer:
+  enable: true
+  override-destination: true
+  sniff:
+    QUIC:
+      ports: [443, 8443]
+    TLS:
+      ports: [443, 8443]
+    HTTP:
+      ports: [80, 8080-8880]
+  skip-domain:
+    - "rule-set:skip-sniff-domain"
+    - "rule-set:googlefcm-domain"
+
+proxy-providers:
+  proxies:
+    type: http
+    path: './proxies/proxies.yaml'
+    url: ''
+    interval: 86400
+    proxy: DIRECT
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 180
+      timeout: 1500
+      expected-status: 200/204
+    override:
+      udp: false
+      skip-cert-verify: true
+
+ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs, proxy: DIRECT}
+domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs, proxy: DIRECT}
+
+rule-providers:
+  exclude-fakeip-basic-domain:
+    type: inline
+    behavior: domain
+    payload:
+      - "*"
+      - "+.lan"
+      - "+.local"
+
+  exclude-fakeip-extra-domain:
+    type: inline
+    behavior: classical
+    payload:
+      - DOMAIN-KEYWORD,stun
+      - DOMAIN-KEYWORD,ntp
+      - DOMAIN-KEYWORD,time
+      - DOMAIN-SUFFIX,market.xiaomi.com
+      - DOMAIN-SUFFIX,wotgame.cn
+      - DOMAIN-SUFFIX,wggames.cn
+      - DOMAIN-SUFFIX,wowsgame.cn
+      - DOMAIN-SUFFIX,wargaming.net
+      - DOMAIN-SUFFIX,steamcontent.com
+      - DOMAIN,nmcheck.gnome.org
+
+  ncsi-domain:
+    type: inline
+    behavior: domain
+    payload:
+      - "+.msftncsi.com"
+      - "+.msftconnecttest.com"
+
+  skip-sniff-domain:
+    type: inline
+    behavior: domain
+    payload:
+      - "Mijia Cloud"
+      - "dlg.io.mi.com"
+      - "+.ess.apple.com"
+      - "+.i.tplinknbu.com"
+      - "wap-gw.tplinkcloud.com"
+      - "stun.tplinkcloud.com"
+      - "+.feishu.cn"
+
+  microsoft@cn-domain:
+    <<: *domain
+    path: ./rules/microsoft@cn-domain.mrs
+    url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/microsoft@cn.mrs"
+  win-update-domain:
+    <<: *domain
+    path: ./rules/win-update-domain.mrs
+    url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/win-update.mrs"
+  xbox@cn-domain:
+    <<: *domain
+    path: ./rules/xbox@cn-domain.mrs
+    url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/xbox@cn.mrs"
+  google@cn-domain:
+    <<: *domain
+    path: ./rules/google@cn-domain.mrs
+    url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google@cn.mrs"
+  googlefcm-domain:
+    <<: *domain
+    path: ./rules/googlefcm-domain.mrs
+    url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/googlefcm.mrs"
+  geolocation-!cn-domain:
+    <<: *domain
+    path: ./rules/geolocation-!cn-domain.mrs
+    url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/geolocation-!cn.mrs"
+  category-ads-all-domain:
+    <<: *domain
+    path: ./rules/category-ads-all-domain.mrs
+    url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ads-all.mrs"
+  steam@cn-domain:
+    <<: *domain
+    path: ./rules/steam@cn-domain.mrs
+    url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/steam@cn.mrs"
+  category-games@cn-domain:
+    <<: *domain
+    path: ./rules/category-games@cn-domain.mrs
+    url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-games@cn.mrs"
+
+  private-domain:
+    <<: *domain
+    path: ./rules/private-domain.mrs
+    url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/private.mrs"
+  cn-domain:
+    <<: *domain
+    path: ./rules/cn-domain.mrs
+    url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.mrs"
+
+  private-ip:
+    <<: *ip
+    path: ./rules/private-ip.mrs
+    url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/private.mrs"
+  cn-ip:
+    <<: *ip
+    path: ./rules/cn-ip.mrs
+    url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/cn.mrs"
+
+url-test: &url-test {type: url-test, include-all-providers: true, url: 'http://cp.cloudflare.com/generate_204', interval: 180, timeout: 1500, expected-status: 200/204, lazy: true}
+
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - "URL-TEST"
+    include-all-providers: true
+
+  - name: MICROSOFT-CN
+    type: select
+    proxies:
+      - PROXY
+      - DIRECT
+
+  - name: XBOX-CN
+    type: select
+    proxies:
+      - PROXY
+      - PASS
+
+  - name: GOOGLE-CN
+    type: select
+    proxies:
+      - PROXY
+      - PASS
+
+  - name: GOOGLE-FCM
+    type: select
+    proxies:
+      - PROXY
+      - DIRECT
+
+  - name: STEAM-CN
+    type: select
+    proxies:
+      - DIRECT
+      - PROXY
+
+  - name: "URL-TEST"
+    <<: *url-test
+
+  - name: GLOBAL
+    type: select
+    proxies:
+      - "PROXY"
+      - "MICROSOFT-CN"
+      - "XBOX-CN"
+      - "GOOGLE-CN"
+      - "GOOGLE-FCM"
+      - "STEAM-CN"
+      - "URL-TEST"
+    include-all-providers: true
+
+rules:
+  - AND,((DST-PORT,443),(NETWORK,UDP)),REJECT
+
+  - RULE-SET,private-domain,DIRECT
+  - RULE-SET,private-ip,DIRECT,no-resolve
+
+  - RULE-SET,category-ads-all-domain,REJECT
+
+  - RULE-SET,ncsi-domain,DIRECT
+  - DOMAIN,inference.location.live.net,DIRECT
+  - RULE-SET,microsoft@cn-domain,MICROSOFT-CN
+  - RULE-SET,win-update-domain,MICROSOFT-CN
+  - RULE-SET,xbox@cn-domain,XBOX-CN
+
+  - RULE-SET,googlefcm-domain,GOOGLE-FCM
+  - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,PROXY
+  - DOMAIN,services.googleapis.cn,PROXY
+  - RULE-SET,google@cn-domain,GOOGLE-CN
+
+  - RULE-SET,steam@cn-domain,STEAM-CN
+  - RULE-SET,category-games@cn-domain,DIRECT
+
+  - RULE-SET,cn-domain,DIRECT
+  - RULE-SET,geolocation-!cn-domain,PROXY
+
+  - RULE-SET,cn-ip,DIRECT
+  - MATCH,PROXY
+
+tun:
+  enable: true
+  stack: gvisor
+  dns-hijack:
+    - any:53
+    - tcp://any:53
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  strict-route: true
