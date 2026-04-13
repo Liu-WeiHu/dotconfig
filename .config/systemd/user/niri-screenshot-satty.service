@@ -1,0 +1,11 @@
+# ~/.config/systemd/user/niri-screenshot-satty.service
+[Unit]
+Description=Open niri screenshots in satty
+After=graphical-session.target
+
+[Service]
+ExecStart=/home/liu/.local/bin/niri-screenshot-satty.sh
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target
